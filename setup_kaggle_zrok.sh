@@ -31,13 +31,13 @@ copy_vscode_dir() {
         mkdir -p "/kaggle/.vscode"
         cp -r "$vscode_dir_in_repo/"* "/kaggle/.vscode/"
         echo ".vscode folder copied to /kaggle directory."
-        
+
         mkdir -p "/kaggle/working"
         [ -d "/kaggle/working/.vscode" ] && rm -rf "/kaggle/working/.vscode"
         mkdir -p "/kaggle/working/.vscode"
         cp -r "$vscode_dir_in_repo/"* "/kaggle/working/.vscode/"
         echo ".vscode folder copied to /kaggle/working directory."
-        
+
         echo "Contents of /kaggle/.vscode:"
         ls -l "/kaggle/.vscode"
         echo "Contents of /kaggle/working/.vscode:"
@@ -91,7 +91,7 @@ setup_environment_variables() {
             echo "export ${key}='${escaped_value_final}'"
         done
         echo "# End of Kaggle instance environment variables"
-        
+
         echo "# Dynamic VS Code server path resolution"
         cat <<'EOT'
 # Dynamic VS Code server path resolution
@@ -118,11 +118,12 @@ install_packages() {
 
 install_zrok() {
     echo "Downloading latest zrok release"
-    curl -s https://api.github.com/repos/openziti/zrok/releases/latest |
-        grep "browser_download_url.*linux_amd64.tar.gz" |
-        cut -d : -f 2,3 |
-        tr -d \" |
-        wget -qi -
+    ZROK_URL="https://github.com/openziti/zrok/releases/download/v1.0.0/zrok_1.0.0_linux_amd64.tar.gz"
+    if command -v wget >/dev/null 2>&1; then
+        wget -q "$ZROK_URL" || { echo "ERROR: Failed to download Zrok"; exit 1; }
+    else
+        curl -sSL -O "$ZROK_URL" || { echo "ERROR: Failed to download Zrok"; exit 1; }
+    fi
 
     echo "Extracting Zrok"
     if ! tar -xzf zrok_*_linux_amd64.tar.gz -C /usr/local/bin/; then
