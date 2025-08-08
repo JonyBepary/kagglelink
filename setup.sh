@@ -4,16 +4,16 @@ set -e
 
 echo "===================================="
 echo "kagglelink setup tool"
-echo "For more information check out: https://github.com/bhdai/kagglelink"
+echo "For more information check out: https://github.com/JonyBepary/kagglelink"
 echo "===================================="
 
 # Default repository URL and branch
-REPO_URL="https://github.com/bhdai/kagglelink.git"
+REPO_URL="https://github.com/JonyBepary/kagglelink.git"
 INSTALL_DIR="/tmp/kagglelink"
 
 # Function to display usage information
 usage() {
-    echo "Usage: curl -sS https://raw.githubusercontent.com/bhdai/kagglelink/refs/heads/main/setup.sh | bash -s -- -k <your_public_key_url> -t <your_zrok_token>"
+    echo "Usage: curl -sS https://raw.githubusercontent.com/JonyBepary/kagglelink/refs/heads/main/setup.sh | bash -s -- -k <your_public_key_url> -t <your_zrok_token>"
     echo ""
     echo "Options:"
     echo "  -k, --keys-url URL    URL to your authorized_keys file"
@@ -77,4 +77,4 @@ echo "⏳ Starting zrok service with your token..."
 echo "✅ Setup complete!"
 echo "✅ You should now be able to connect to your Kaggle instance via SSH."
 echo "✅ If you see a URL above, use that to connect from your local machine."
-echo "✅ For more information, visit: https://github.com/bhdai/kagglelink"
+echo "✅ For more information, visit: https://github.com/JonyBepary/kagglelink"

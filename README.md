@@ -43,7 +43,7 @@ Generate a new SSH key pair on your local machine (if you haven't already):
 ssh-keygen -t rsa -b 4096 -C "kaggle_remote_ssh" -f ~/.ssh/kaggle_rsa
 ```
 
-Create a github repository and push the `~/.ssh/kaggle_rsa.pub` file to it. Make sure the repository is public. Once finished, you can get the public key URL by navigating to the file in your repository and clicking on the "Raw" button. 
+Create a github repository and push the `~/.ssh/kaggle_rsa.pub` file to it. Make sure the repository is public. Once finished, you can get the public key URL by navigating to the file in your repository and clicking on the "Raw" button.
 
 ![Image](https://github.com/user-attachments/assets/ec9a884c-1c97-4be6-bd6d-03ac5dd16de7)
 
@@ -78,7 +78,7 @@ After completing the Kaggle setup, you'll receive a token. Follow these steps on
 
 ## SSH Connection
 
-*For VSCode check out the [old instrunction](https://github.com/bhdai/kagglelink/blob/ngrok/README.md#connect-via-ssh) (will update this eventually)*
+*For VSCode check out the [old instrunction](https://github.com/JonyBepary/kagglelink/blob/ngrok/README.md#connect-via-ssh) (will update this eventually)*
 
 Connect to your Kaggle instance via SSH:
 
