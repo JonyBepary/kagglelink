@@ -118,7 +118,7 @@ install_packages() {
 
 install_zrok() {
     echo "Downloading latest zrok release"
-    ZROK_URL="https://github.com/openziti/zrok/releases/download/v0.4.49/zrok_0.4.49_linux_amd64.tar.gz"
+    ZROK_URL="https://github.com/openziti/zrok/releases/download/v1.1.0/zrok_1.1.0_linux_amd64.tar.gz"
     if command -v wget >/dev/null 2>&1; then
         wget -q "$ZROK_URL" || { echo "ERROR: Failed to download Zrok"; exit 1; }
     else
